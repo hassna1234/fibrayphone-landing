@@ -1,16 +1,27 @@
 
-import "./globals.css";
-import type { Metadata } from "next";
+// app/layout.tsx
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Fibrayphone — Ahorra en fibra, móvil, luz y gas",
-  description: "Comparamos por ti y te acompañamos en todo el proceso. Servicio sin coste para particulares.",
+  title: 'Fibrayphone',
+  description: 'Fibra • Móvil • Energía • Alarma',
+  themeColor: '#07AFC3', // tu turquesa
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png' }],
+    shortcut: ['/favicon.ico'],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="bg-white text-slate-900">{children}</body>
     </html>
   );
 }
